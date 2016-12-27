@@ -6,6 +6,23 @@
 //  Copyright © 2016年 廖国朋. All rights reserved.
 //
 
+/*
+ 
+ *********************************************************************************
+ *                                                                                *
+ * 在您使用过程中如果出现bug，或者有任何不适当的地方，请及时以以下任意一种方式联系我。               *
+ *                                                                     *
+ * 持续更新地址: https://github.com/LiaoGuopeng/LGPImageEditor                             *
+ * QQ : 756581014
+ *
+ * Email : 756581014@qq.com                                                          *
+ * GitHub: https://github.com/LiaoGuopeng                                              *                                                                *
+ *                                                                                *
+ *********************************************************************************
+ 
+ */
+
+
 #import "ViewController.h"
 #import "LGPImageEditor.h"
 #import "LGPRectEditVC.h"

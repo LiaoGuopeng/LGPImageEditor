@@ -51,7 +51,7 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     LGPImageEditor *vc = [LGPImageEditor new];
     vc.readyEditImage = image;
-    vc.delegate = self;
+    vc.delegate = self;//自定义用法，比较麻烦。优先级大于maskRect和type的设置。所以不用设置maskRect和type
     
     WeakObj(self);
     vc.sureOfReturnImage = ^(UIImage *image){
@@ -65,6 +65,7 @@
     
 }
 
+#pragma make - LGPMaskBezierPathDelegate
 - (UIBezierPath *)bezierPathWithToRect:(CGRect)rect{
     NSInteger spaceWidth = 10;
     

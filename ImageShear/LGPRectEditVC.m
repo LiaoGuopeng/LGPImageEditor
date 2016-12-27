@@ -37,7 +37,7 @@
 - (void)imageDidClicked{
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self;
-    picker.allowsEditing = NO;
+    picker.allowsEditing = NO;//不要打开系统的编辑器
     
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
@@ -48,9 +48,9 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     LGPImageEditor *vc = [LGPImageEditor new];
     vc.readyEditImage = image;
-    vc.type = LGPMaskViewTypeRect;
+    vc.type = LGPMaskViewTypeRect;//默认矩形，LGPMaskViewTypeOval的话会根据maskRect画出椭圆形UIBezierPath
     
-    CGRect rect = CGRectMake(15,self.view.frame.size.height*0.25,self.view.frame.size.width-30,self.view.frame.size.height/2);
+    CGRect rect = CGRectMake(15,self.view.frame.size.height*0.25,self.view.frame.size.width-30,self.view.frame.size.height/2);//基于[UIScreen mainScreen].bounds 在你想要的任意可见位置给出CGRect
     vc.maskRect = rect;
     
     WeakObj(self);
@@ -60,7 +60,7 @@
         [picker dismissViewControllerAnimated:NO completion:nil];
     };
     
-    [vc show];
+    [vc show];//显示  不用设置frame
     
 }
 
