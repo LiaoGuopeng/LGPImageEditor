@@ -148,4 +148,5 @@ LGPMaskBezierPathDelegate代理方法会多次调用，需要根据参数rect画
 
 ##  效果图
 
-![](http://ww3.sinaimg.cn/mw690/005XldQagw1fb5gaik9gtj30ac0ijwfq.jpg)![](http://ww4.sinaimg.cn/mw690/005XldQagw1fb5gait9vgj30af0j5my4.jpg)![]
+![](http://ww3.sinaimg.cn/mw690/005XldQagw1fb5gaik9gtj30ac0ijwfq.jpg)
+![](http://ww4.sinaimg.cn/mw690/005XldQagw1fb5gait9vgj30af0j5my4.jpg)
