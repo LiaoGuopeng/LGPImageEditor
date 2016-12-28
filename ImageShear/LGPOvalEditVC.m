@@ -47,13 +47,13 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    LGPImageEditor *vc = [LGPImageEditor new];
+
+    CGRect rect = CGRectMake(50,(self.view.frame.size.height - self.view.frame.size.width + 100)/2,self.view.frame.size.width-100,self.view.frame.size.width-100);
+
+    LGPImageEditor *vc = [LGPImageEditor imageEditorMaskViewForMaskRect:rect];
     vc.readyEditImage = image;
     vc.type = LGPMaskViewTypeOval;
-    
-    CGRect rect = CGRectMake(50,(self.view.frame.size.height - self.view.frame.size.width + 100)/2,self.view.frame.size.width-100,self.view.frame.size.width-100);
-    vc.maskRect = rect;
-    
+        
     WeakObj(self);
     vc.sureOfReturnImage = ^(UIImage *image){
         selfWeak.imageView.image = image;

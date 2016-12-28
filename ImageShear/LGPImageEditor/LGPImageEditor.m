@@ -23,6 +23,21 @@
 
 @implementation LGPImageEditor
 
++ (instancetype)imageEditorMaskViewForMaskRect:(CGRect)maskViewRect{
+    LGPImageEditor *editor = [LGPImageEditor new];
+    editor.maskRect = maskViewRect;
+    return editor;
+}
+
++(instancetype)imageEditorMaskViewCenterInMiddleForBounds:(CGRect)maskViewBounds{
+    LGPImageEditor *editor = [LGPImageEditor new];
+    
+    maskViewBounds.origin.x = editor.center.x - maskViewBounds.size.width/2;
+    maskViewBounds.origin.y = editor.center.y - maskViewBounds.size.height/2;
+    editor.maskRect = maskViewBounds;
+    return editor;
+}
+
 - (instancetype)init{
     self = [super init];
     self.frame = [UIScreen mainScreen].bounds;

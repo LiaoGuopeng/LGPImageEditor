@@ -27,6 +27,12 @@
 
 @interface LGPImageEditor : UIView<LGPMaskBezierPathDelegate>
 
+//初始化，遮罩是屏幕居中的
++ (instancetype)imageEditorMaskViewCenterInMiddleForBounds:(CGRect )maskViewBounds;
+
+//想要出现在任意地方请调用这个
++ (instancetype)imageEditorMaskViewForMaskRect:(CGRect )maskViewRect;
+
 //你需要编辑的图片
 @property (nonatomic,strong)UIImage *readyEditImage;
 
