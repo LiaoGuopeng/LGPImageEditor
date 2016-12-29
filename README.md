@@ -5,7 +5,7 @@
 
 ##Pod支持：
 
-支持pod：  pod 'LGPImageEditor', '~> 0.0.1'
+支持pod：  pod 'LGPImageEditor', '~> 0.0.2'
 
 
 #   用法简介
@@ -24,13 +24,12 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    LGPImageEditor *vc = [LGPImageEditor new];
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width-30, self.view.frame.size.height/2);
+    
+    LGPImageEditor *vc = [LGPImageEditor imageEditorMaskViewCenterInMiddleForBounds:rect];
     vc.readyEditImage = image;
     vc.type = LGPMaskViewTypeRect;//默认矩形，LGPMaskViewTypeOval的话会根据maskRect画出椭圆形UIBezierPath
-    
-    CGRect rect = CGRectMake(15,self.view.frame.size.height*0.25,self.view.frame.size.width-30,self.view.frame.size.height/2);//基于[UIScreen mainScreen].bounds 在你想要的任意可见位置给出CGRect
-    vc.maskRect = rect;
-    
+        
     WeakObj(self);
     vc.sureOfReturnImage = ^(UIImage *image){
         selfWeak.imageView.image = image;
