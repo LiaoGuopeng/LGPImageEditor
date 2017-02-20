@@ -5,7 +5,7 @@
 
 ##Pod支持：
 
-支持pod：  pod 'LGPImageEditor', '~> 0.0.2'
+支持pod：  pod 'LGPImageEditor', '~> 0.0.3'
 
 
 #   用法简介
