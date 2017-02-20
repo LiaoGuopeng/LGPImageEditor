@@ -276,9 +276,15 @@
         NSLog(@"无图");
         return;
     }
-    UIWindow *v = [UIApplication sharedApplication].windows.firstObject;
+    UIWindow *window = nil;
     
-    [v addSubview:self];
+    for (UIWindow *v in [UIApplication sharedApplication].windows) {
+        if (v.hidden == NO && v.alpha != 0.0) {
+            window = v;
+            break;
+        }
+    }
+    [window addSubview:self];
 }
 
 - (void)didMoveToWindow{
