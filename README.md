@@ -42,7 +42,7 @@
 }
 ```
 
-##  自定义UIBezierPath用法
+##  自定义UIBezierPath用法(比较复杂)
 ```objective-c
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
